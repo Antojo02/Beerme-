@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BeeRMeee ✨ — TikTok Shop Oficial</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+    body::after{
+ content:'';
+
+ position:fixed;
+
+ width:400px;
+ height:400px;
+
+ left:calc(var(--x) - 200px);
+ top:calc(var(--y) - 200px);
+
+ background:
+ radial-gradient(
+ circle,
+ rgba(255,45,120,.15),
+ transparent 70%
+ );
+
+ pointer-events:none;
+}
+    .card{
+ backdrop-filter: blur(20px);
+ background: rgba(255,255,255,.55);
+
+ border:1px solid rgba(255,255,255,.3);
+
+ box-shadow:
+ 0 10px 40px rgba(0,0,0,.08);
+}
+  body{
+ background:
+ radial-gradient(circle at 20% 20%,#ff2d7840,transparent 30%),
+ radial-gradient(circle at 80% 40%,#8b5cf640,transparent 30%),
+ radial-gradient(circle at 50% 90%,#06b6d440,transparent 30%),
+ #fff;
+}
+  /* ── RESET & BASE ── */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --pk: #FF2D78;
+    --pk2: #FF6FA8;
+    --dark: #0D0D0D;
+    --gray: #F7F6F4;
+    --muted: #888;
+    --white: #fff;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark);
+    background: #fff;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background: rgba(255,255,255,.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #f0f0f0;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 62px;
+    padding: 0 6%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: -.5px;
+    text-decoration: none;
+    color: var(--dark);
+  }
+  .logo span { color: var(--pk); }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--pk); }
+  .nav-right { display: flex; align-items: center; gap: 10px; }
+  .tiktok-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--dark);
+    color: #fff;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: opacity .2s;
+    text-decoration: none;
+  }
+  .tiktok-btn:hover { opacity: .8; }
+  .tiktok-btn svg { width: 14px; height: 14px; fill: #fff; flex-shrink: 0; }
+  .shop-btn {
+    background: var(--pk);
+    color: #fff;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: opacity .2s;
+  }
+  .shop-btn:hover { opacity: .85; }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--dark);
+    border-radius: 2px;
+    transition: all .3s;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 62px);
+    overflow: hidden;
+  }
+  .hero-left {
+    padding: 0 5% 0 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+  }
+  .live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FFF0F5;
+    color: var(--pk);
+    padding: 7px 16px;
+    border-radius: 100px;
+    font-size: 12.5px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    width: fit-content;
+    border: 1px solid #FFD6E7;
+  }
+  .live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--pk);
+    flex-shrink: 0;
+    animation: blink 1.5s infinite;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .3; transform: scale(.8); }
+  }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(36px, 4.5vw, 62px);
+    line-height: 1.04;
+    letter-spacing: -2.5px;
+    color: var(--dark);
+    margin-bottom: 16px;
+  }
+  .hero h1 .pk { color: var(--pk); }
+  .hero h1 .line2 {
+    display: block;
+    font-weight: 400;
+    font-style: italic;
+    font-size: .72em;
+    letter-spacing: -1px;
+    color: #aaa;
+    margin-top: 4px;
+  }
+  .hero-desc {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.75;
+    max-width: 400px;
+    margin-bottom: 28px;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 36px;
+  }
+  .cta-main {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    background: var(--pk);
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all .25s;
+    text-decoration: none;
+  }
+  .cta-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(255,45,120,.35);
+  }
+  .cta-main svg { width: 16px; height: 16px; fill: #fff; }
+  .cta-ghost {
+    background: transparent;
+    color: var(--dark);
+    border: 1.5px solid #ddd;
+    padding: 14px 26px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all .2s;
+  }
+  .cta-ghost:hover { border-color: var(--pk); color: var(--pk); }
+  .hero-nums {
+    display: flex;
+    gap: 32px;
+    padding-top: 28px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .hnum-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .hnum-lbl {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  /* ── COLLAGE ── */
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background: #FBF5F8;
+  }
+  .collage-wrap {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 8px;
+    padding: 8px;
+    transform: rotate(4deg) scale(1.14);
+    transform-origin: center center;
+  }
+  .c-card {
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(32px, 3.5vw, 52px);
+    position: relative;
+    overflow: hidden;
+    animation: floatCard 4s ease-in-out infinite;
+  }
+  .c-card:nth-child(1)  { grid-column:1; grid-row:1;   background:#FFE0EC; animation-delay:0s; }
+  .c-card:nth-child(2)  { grid-column:2; grid-row:1/3; background:#E0EEFF; animation-delay:.4s; }
+  .c-card:nth-child(3)  { grid-column:3; grid-row:1;   background:#FFF5DC; animation-delay:.8s; }
+  .c-card:nth-child(4)  { grid-column:1; grid-row:2/4; background:#E0FFE8; animation-delay:.2s; }
+  .c-card:nth-child(5)  { grid-column:3; grid-row:2;   background:#F0E0FF; animation-delay:.6s; }
+  .c-card:nth-child(6)  { grid-column:2/4;grid-row:3;  background:#FFE8DC; animation-delay:1s;  }
+  .c-card:nth-child(7)  { grid-column:1; grid-row:4;   background:#DCF5FF; animation-delay:.3s; }
+  .c-card:nth-child(8)  { grid-column:2; grid-row:4;   background:#FFDCE8; animation-delay:.7s; }
+  .c-card:nth-child(9)  { grid-column:3; grid-row:3/5; background:#FFFADC; animation-delay:.1s; }
+  @keyframes floatCard {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-7px); }
+  }
+  .c-badge {
+    position: absolute;
+    bottom: 9px;
+    left: 9px;
+    background: rgba(255,255,255,.92);
+    padding: 3px 9px;
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--dark);
+  }
+  .c-price {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    background: var(--pk);
+    color: #fff;
+    padding: 3px 9px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  /* fade left edge into white */
+  .hero-right::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #fff 0%, transparent 28%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  /* floating cards */
+  .tiktok-float {
+    position: absolute;
+    bottom: 28px;
+    right: 24px;
+    z-index: 10;
+    background: #fff;
+    border-radius: 18px;
+    padding: 14px 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,.12);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: floatCard 3s ease-in-out infinite;
+  }
+  .tt-icon {
+    width: 38px;
+    height: 38px;
+    background: var(--dark);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .tt-icon svg { width: 20px; height: 20px; fill: #fff; }
+  .tt-label  { font-size: 11px; color: var(--muted); }
+  .tt-name   { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13.5px; }
+  .tt-follow { font-size: 11px; color: var(--pk); font-weight: 600; margin-top: 1px; }
+  .verified-float {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 10;
+    background: var(--pk);
+    color: #fff;
+    border-radius: 14px;
+    padding: 10px 15px;
+    text-align: center;
+    animation: floatCard 3.5s ease-in-out infinite;
+    animation-delay: .5s;
+  }
+  .verified-float strong { display: block; font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; }
+  .verified-float span   { font-size: 10px; opacity: .85; white-space: nowrap; }
+
+  /* ── TICKER ── */
+  .ticker { background: var(--dark); padding: 14px 0; overflow: hidden; }
+  .ticker-track {
+    display: flex;
+    width: max-content;
+    animation: tickerScroll 20s linear infinite;
+  }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-item {
+    color: rgba(255,255,255,.6);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 0 30px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .ticker-item::before { content: '✦'; color: var(--pk); font-size: 9px; }
+  @keyframes tickerScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ── SECTIONS COMMON ── */
+  section { padding: 80px 6%; }
+  .inner  { max-width: 1300px; margin: 0 auto; }
+  .stag {
+    display: inline-block;
+    background: #FFF0F5;
+    color: var(--pk);
+    padding: 5px 14px;
+    border-radius: 100px;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .stit {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(26px, 3.5vw, 42px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .ssub {
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 460px;
+    line-height: 1.7;
+  }
+
+  /* ── CATEGORÍAS ── */
+  .cats-section { background: var(--gray); }
+  .cats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
+    margin-top: 36px;
+  }
+  .cat-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 26px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .2s;
+    border: 1px solid #eee;
+    text-decoration: none;
+    color: var(--dark);
+    display: block;
+  }
+  .cat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,.08);
+    border-color: var(--pk);
+  }
+  .cat-emoji  { font-size: 40px; margin-bottom: 12px; }
+  .cat-name   { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+  .cat-count  { font-size: 12px; color: var(--muted); }
+
+  /* ── TIKTOK SHOP ── */
+  .shop-section {
+    background: var(--dark);
+    color: #fff;
+    text-align: center;
+  }
+  .shop-section .stag  { background: rgba(255,45,120,.18); color: var(--pk); }
+  .shop-section .stit  { color: #fff; }
+  .shop-section .ssub  { color: rgba(255,255,255,.5); margin: 0 auto 40px; }
+
+  /* phone mockup */
+  .phone-wrap { display: flex; justify-content: center; margin-bottom: 36px; }
+  .phone {
+    width: 200px;
+    height: 380px;
+    background: #111;
+    border-radius: 36px;
+    border: 6px solid #222;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0,0,0,.6);
+  }
+  .phone-notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 22px;
+    background: #111;
+    border-radius: 0 0 14px 14px;
+    z-index: 2;
+  }
+  .phone-screen {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(160deg, #1a1a2e, #16213e, #0f3460);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .phone-tiktok {
+    width: 48px;
+    height: 48px;
+    background: var(--dark);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .phone-tiktok svg { width: 26px; height: 26px; fill: #fff; }
+  .phone-handle { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; color: #fff; }
+  .phone-tag    { font-size: 11px; color: rgba(255,255,255,.5); }
+  .phone-products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    padding: 0 12px;
+    width: 100%;
+    margin-top: 6px;
+  }
+  .phone-prod {
+    background: rgba(255,255,255,.08);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 22px;
+  }
+  .phone-prod-price { font-size: 10px; color: var(--pk); font-weight: 700; margin-top: 3px; }
+
+  /* ── VIDEOS CAROUSEL ── */
+  .carousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 36px;
+    position: relative;
+  }
+  .carousel-container {
+    flex: 1;
+    overflow: hidden;
+  }
+  .videos-carousel {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding: 4px;
+  }
+  .videos-carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .video-card {
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    flex: 0 0 calc(25% - 12px);
+    aspect-ratio: 9/16;
+    min-width: 240px;
+  }
+  .video-card iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+  }
+  .video-card .tiktok-embed {
+    width: 100% !important;
+    max-width: none !important;
+  }
+  .video-card blockquote {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: #000 !important;
+  }
+  .video-thumbnail {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 12px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  .video-thumbnail .play-icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 45, 120, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+    z-index: 10;
+  }
+  .carousel-btn {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--pk);
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .carousel-btn:hover:not(:disabled) {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 45, 120, .4);
+  }
+  .carousel-btn:disabled {
+    background: #ddd;
+    cursor: not-allowed;
+    opacity: .5;
+  }
+  .carousel-btn-prev { order: -1; }
+  .carousel-btn-next { order: 1; }
+
+  .tt-shop-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--pk);
+    color: #fff;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all .25s;
+    text-decoration: none;
+  }
+  .tt-shop-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 36px rgba(255,45,120,.4);
+  }
+  .tt-shop-btn svg { width: 20px; height: 20px; fill: #fff; }
+  .shop-note { font-size: 12px; color: rgba(255,255,255,.3); margin-top: 14px; }
+  .shop-features {
+    display: flex;
+    gap: 36px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 52px;
+  }
+  .shop-feat      { text-align: center; max-width: 170px; }
+  .shop-feat-icon { font-size: 30px; margin-bottom: 10px; }
+  .shop-feat-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: #fff; margin-bottom: 5px; }
+  .shop-feat-desc  { font-size: 12.5px; color: rgba(255,255,255,.4); line-height: 1.6; }
+
+  /* ── REVIEWS ── */
+  .reviews-section { overflow: hidden; }
+  .rev-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .rev-score { text-align: right; }
+  .rev-score-big   { font-family: 'Syne', sans-serif; font-size: 52px; font-weight: 800; line-height: 1; color: var(--pk); }
+  .rev-score-stars { font-size: 18px; color: #F5A623; margin: 4px 0; }
+  .rev-score-count { font-size: 13px; color: var(--muted); }
+  .rev-track-wrap  { position: relative; overflow: hidden; }
+  .rev-track-wrap::before,
+  .rev-track-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 80px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .rev-track-wrap::before { left: 0;  background: linear-gradient(to right, #fff, transparent); }
+  .rev-track-wrap::after  { right: 0; background: linear-gradient(to left,  #fff, transparent); }
+  .rev-track {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    animation: revScroll 28s linear infinite;
+  }
+  .rev-track:hover { animation-play-state: paused; }
+  @keyframes revScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .rev-card {
+    background: var(--gray);
+    border-radius: 18px;
+    padding: 22px;
+    min-width: 280px;
+    flex-shrink: 0;
+  }
+  .rev-stars  { color: #F5A623; font-size: 13px; margin-bottom: 10px; }
+  .rev-text   { font-size: 13.5px; color: #444; line-height: 1.7; margin-bottom: 14px; }
+  .rev-author { display: flex; align-items: center; gap: 9px; }
+  .rev-av {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--pk);
+    color: #fff;
+    font-size: 12px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .rev-name { font-size: 13px; font-weight: 600; }
+  .rev-via  { font-size: 11px; color: var(--muted); }
+
+  /* ── HOW ── */
+  .how-section { background: var(--gray); }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .step {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px 22px;
+    text-align: center;
+  }
+  .step-n     { font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700; color: var(--pk); margin-bottom: 14px; letter-spacing: 1px; }
+  .step-ico   { font-size: 34px; margin-bottom: 12px; }
+  .step-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+  .step-desc  { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    background: var(--pk);
+    color: #fff;
+    text-align: center;
+    padding: 90px 6%;
+  }
+  .final-cta h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(30px, 4.5vw, 50px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    margin-bottom: 14px;
+  }
+  .final-cta p { font-size: 17px; opacity: .85; max-width: 440px; margin: 0 auto 32px; line-height: 1.6; }
+  .cta-wh {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: var(--pk);
+    border: none;
+    padding: 17px 38px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all .2s;
+    text-decoration: none;
+  }
+  .cta-wh:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,.2); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    padding: 60px 6% 28px;
+    color: rgba(255,255,255,.7);
+    font-size: 13px;
+  }
+  .footer-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 36px;
+    margin-bottom: 40px;
+  }
+  .footer-col h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-col a {
+    color: rgba(255,255,255,.6);
+    text-decoration: none;
+    transition: color .2s;
+    font-size: 13px;
+  }
+  .footer-col a:hover { color: var(--pk); }
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .footer-logo span { color: var(--pk); }
+  .footer-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,.6);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .social-btn {
+    width: 36px;
+    height: 36px;
+    background: rgba(255,45,120,.15);
+    border: 1px solid rgba(255,45,120,.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pk);
+    text-decoration: none;
+    transition: all .2s;
+    font-size: 16px;
+  }
+  .social-btn:hover { 
+    background: var(--pk);
+    color: #fff;
+    border-color: var(--pk);
+  }
+  .footer-bottom {
+    max-width: 1300px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255,255,255,.1);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,.4);
+  }
+  .footer-bottom a {
+    color: rgba(255,255,255,.4);
+    text-decoration: none;
+  }
+  .footer-bottom a:hover { color: var(--pk); }
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1200px) {
+    section { padding: 60px 6%; }
+    .nav-links { gap: 20px; }
+    .nav-links a { font-size: 13px; }
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 4%; }
+    .nav-links { 
+      display: none;
+      position: absolute;
+      top: 62px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: #fff;
+      border-bottom: 1px solid #f0f0f0;
+      padding: 12px 0;
+      z-index: 199;
+      width: 100%;
+      list-style: none;
+    }
+    .nav-links.active { display: flex; }
+    .nav-links li { padding: 0; }
+    .nav-links a {
+      display: block;
+      padding: 12px 6%;
+      font-size: 14px;
+      border-bottom: 1px solid #f5f5f5;
+    }
+    .nav-links a:last-child { border-bottom: none; }
+    .hamburger { display: flex; }
+    .tiktok-btn { display: none; }
+    .shop-btn { display: none; }
+    .nav-right { gap: 0; }
+    
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+    .hero-left {
+      padding: 48px 6% 36px;
+      order: 2;
+    }
+    .hero-right {
+      order: 1;
+      height: 55vw;
+      min-height: 280px;
+    }
+    .hero-right::after {
+      background: linear-gradient(to top, #fff 0%, transparent 40%);
+    }
+    .hero h1 { font-size: clamp(28px, 5vw, 48px); }
+    .hero-desc { font-size: 15px; }
+    .hero-ctas { gap: 10px; }
+    .cta-main, .cta-ghost { padding: 12px 20px; font-size: 14px; }
+    .tiktok-float  { bottom: 12px; right: 12px; padding: 10px 12px; font-size: 11px; }
+    .tt-icon { width: 32px; height: 32px; }
+    .verified-float { top: 12px; right: 12px; padding: 8px 12px; }
+    .verified-float strong { font-size: 16px; }
+    .verified-float span { font-size: 9px; }
+    
+    .cats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .cat-card { padding: 20px 16px; }
+    .cat-emoji { font-size: 32px; }
+    .cat-name { font-size: 13px; }
+    
+    .stit { font-size: clamp(22px, 3vw, 36px); }
+    .phone { width: 160px; height: 300px; }
+    .shop-features { gap: 24px; }
+    .shop-feat { max-width: 140px; }
+    
+    .carousel-wrapper { gap: 12px; }
+    .carousel-btn { width: 40px; height: 40px; font-size: 16px; }
+    .video-card { flex: 0 0 calc(50% - 12px); min-width: 200px; }
+    .videos-carousel { gap: 24px; }
+    .videos-carousel { gap: 24px; }
+    
+    .steps { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .step { padding: 20px 16px; }
+    .step-ico { font-size: 28px; }
+    
+    .footer-content {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+    .footer-links {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    body { font-size: 14px; }
+    section { padding: 50px 5%; }
+    nav { padding: 0 4%; height: 56px; }
+    .logo { font-size: 18px; }
+    
+    .hero-left { padding: 36px 5% 28px; }
+    .hero-nums { flex-direction: column; gap: 16px; padding-top: 20px; }
+    .hnum-val { font-size: 22px; }
+    .hnum-lbl { font-size: 11px; }
+    
+    .live-badge { font-size: 11px; padding: 6px 12px; margin-bottom: 16px; }
+    .live-dot { width: 6px; height: 6px; }
+    .hero h1 { font-size: clamp(24px, 6vw, 40px); margin-bottom: 12px; }
+    .hero-desc { font-size: 14px; margin-bottom: 20px; }
+    .hero-ctas { margin-bottom: 24px; }
+    .cta-main, .cta-ghost { padding: 11px 18px; font-size: 13px; }
+    
+    .cats-grid { grid-template-columns: repeat(2, 1fr); }
+    .cat-emoji { font-size: 28px; }
+    
+    .phone { width: 140px; height: 260px; border: 5px solid #222; border-radius: 28px; }
+    .phone-notch { width: 70px; height: 18px; }
+    .phone-tiktok { width: 40px; height: 40px; }
+    .phone-handle { font-size: 11px; }
+    .phone-tag { font-size: 9px; }
+    .phone-products { gap: 4px; padding: 0 10px; margin-top: 4px; }
+    .phone-prod { padding: 8px; font-size: 18px; }
+    .phone-prod-price { font-size: 9px; }
+    
+    .carousel-wrapper { gap: 12px; margin-bottom: 24px; }
+    .carousel-btn { width: 40px; height: 40px; font-size: 16px; }
+    .video-card { flex: 0 0 calc(50% - 12px); min-width: 180px; }
+    .videos-carousel { gap: 24px; }
+    
+    .rev-score-big { font-size: 40px; }
+    .rev-score-stars { font-size: 16px; }
+    .rev-card { min-width: 240px; padding: 16px; }
+    
+    .steps { grid-template-columns: 1fr; gap: 12px; }
+    .step { padding: 18px 14px; }
+    .step-n { font-size: 11px; margin-bottom: 10px; }
+    .step-ico { font-size: 28px; }
+    .step-title { font-size: 13px; }
+    .step-desc { font-size: 12px; }
+    
+    .final-cta { padding: 60px 5%; }
+    .final-cta h2 { font-size: clamp(24px, 4vw, 40px); margin-bottom: 12px; }
+    .final-cta p { font-size: 14px; margin: 0 auto 20px; }
+    .cta-wh { padding: 14px 32px; font-size: 13px; }
+    
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .footer-col h3 { font-size: 13px; margin-bottom: 12px; }
+    .footer-col a { font-size: 12px; }
+    .footer-desc { font-size: 12px; }
+    .social-btn { width: 32px; height: 32px; font-size: 14px; }
+    .footer-bottom {
+      flex-direction: column;
+      gap: 10px;
+      font-size: 11px;
+    }
+    .footer-links { flex-direction: column; gap: 6px; }
+  }
+
+  @media (max-width: 480px) {
+    body { font-size: 13px; }
+    header { border-bottom: 1px solid #eee; }
+    nav { height: 50px; padding: 0 3%; }
+    .logo { font-size: 16px; }
+    .hamburger span { width: 20px; }
+    
+    section { padding: 40px 4%; }
+    .inner { padding: 0; }
+    
+    .hero-left { padding: 28px 4% 20px; }
+    .live-badge { font-size: 10px; padding: 5px 10px; margin-bottom: 12px; }
+    .hero h1 { font-size: clamp(20px, 6vw, 32px); margin-bottom: 10px; line-height: 1; }
+    .hero h1 .line2 { font-size: 0.65em; margin-top: 2px; }
+    .hero-desc { font-size: 13px; max-width: none; margin-bottom: 16px; }
+    .hero-ctas { gap: 8px; margin-bottom: 20px; }
+    .cta-main { padding: 10px 16px; font-size: 12px; gap: 6px; }
+    .cta-main svg { width: 14px; height: 14px; }
+    .cta-ghost { padding: 10px 14px; font-size: 12px; }
+    .hero-nums { gap: 16px; padding-top: 16px; }
+    .hnum-val { font-size: 18px; }
+    .hnum-lbl { font-size: 10px; }
+    
+    .cats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px; }
+    .cat-card { padding: 16px 12px; border-radius: 16px; }
+    .cat-emoji { font-size: 24px; margin-bottom: 8px; }
+    .cat-name { font-size: 12px; }
+    .cat-count { font-size: 11px; }
+    
+    .stag { font-size: 10px; padding: 4px 10px; margin-bottom: 8px; }
+    .stit { font-size: clamp(18px, 5vw, 28px); margin-bottom: 8px; }
+    .ssub { font-size: 13px; }
+    
+    .phone-wrap { margin-bottom: 20px; }
+    .phone { width: 120px; height: 220px; border: 4px solid #222; border-radius: 22px; }
+    .phone-notch { width: 60px; height: 15px; }
+    .phone-tiktok { width: 32px; height: 32px; }
+    .phone-tiktok svg { width: 18px; height: 18px; }
+    .phone-handle { font-size: 10px; }
+    .phone-tag { font-size: 8px; }
+    .phone-products { gap: 3px; padding: 0 8px; margin-top: 3px; }
+    .phone-prod { padding: 6px; font-size: 16px; }
+    .phone-prod-price { font-size: 8px; }
+    
+    .carousel-wrapper { flex-direction: column; gap: 12px; margin-bottom: 20px; }
+    .carousel-btn { width: 36px; height: 36px; font-size: 14px; }
+    .carousel-container { width: 100%; }
+    .video-card { flex: 0 0 100%; min-width: 100%; height: 280px; }
+    .videos-carousel { gap: 24px; }
+    
+    .tt-shop-btn { padding: 14px 24px; font-size: 13px; gap: 8px; }
+    .tt-shop-btn svg { width: 16px; height: 16px; }
+    .shop-note { font-size: 11px; }
+    .shop-features { gap: 16px; margin-top: 32px; }
+    .shop-feat { max-width: 100px; }
+    .shop-feat-icon { font-size: 24px; }
+    .shop-feat-title { font-size: 12px; }
+    .shop-feat-desc { font-size: 11px; }
+    
+    .rev-header { flex-direction: column; align-items: flex-start; }
+    .rev-score { text-align: left; margin-top: 16px; }
+    .rev-score-big { font-size: 32px; }
+    .rev-score-stars { font-size: 14px; }
+    .rev-score-count { font-size: 11px; }
+    .rev-card { min-width: 200px; padding: 14px; }
+    .rev-stars { font-size: 12px; }
+    .rev-text { font-size: 12px; }
+    .rev-av { width: 28px; height: 28px; font-size: 10px; }
+    .rev-name { font-size: 12px; }
+    .rev-via { font-size: 10px; }
+    
+    .steps { grid-template-columns: 1fr; gap: 10px; margin-top: 24px; }
+    .step { padding: 16px 12px; }
+    .step-n { font-size: 10px; margin-bottom: 8px; }
+    .step-ico { font-size: 24px; }
+    .step-title { font-size: 12px; margin-bottom: 4px; }
+    .step-desc { font-size: 11px; }
+    
+    .final-cta { padding: 50px 4%; }
+    .final-cta h2 { font-size: clamp(18px, 5vw, 28px); margin-bottom: 10px; }
+    .final-cta p { font-size: 13px; margin: 0 auto 16px; }
+    .cta-wh { padding: 12px 24px; font-size: 12px; }
+    .cta-wh:hover { transform: translateY(-2px); }
+    
+    footer { padding: 40px 4% 20px; }
+    .footer-content { grid-template-columns: 1fr; gap: 16px; margin-bottom: 20px; }
+    .footer-col h3 { font-size: 12px; margin-bottom: 10px; }
+    .footer-col ul { gap: 8px; }
+    .footer-col a { font-size: 11px; }
+    .footer-logo { font-size: 16px; margin-bottom: 8px; }
+    .footer-desc { font-size: 11px; margin-bottom: 12px; }
+    .footer-socials { gap: 8px; }
+    .social-btn { width: 28px; height: 28px; font-size: 12px; }
+    .footer-bottom {
+      font-size: 10px;
+      gap: 8px;
+      border-top: 1px solid rgba(255,255,255,.05);
+      padding-top: 16px;
+    }
+    .footer-links { gap: 12px; }
+  }
+
+  @media (max-width: 375px) {
+    nav { height: 48px; }
+    .logo { font-size: 15px; }
+    .hamburger span { width: 18px; height: 1.5px; }
+    
+    .hero h1 { font-size: clamp(18px, 6vw, 28px); }
+    .hero-desc { font-size: 12px; }
+    .cta-main, .cta-ghost { padding: 9px 14px; font-size: 11px; }
+    
+    .cats-grid { grid-template-columns: 1fr; }
+    .stit { font-size: clamp(16px, 4vw, 24px); }
+    .ssub { font-size: 12px; }
+    
+    .phone { width: 100px; height: 180px; border: 3px solid #222; }
+    .phone-notch { width: 50px; height: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <a href="javascript:void(0)" class="logo">Bee<span>R</span>Meee ✨</a>
+    <ul class="nav-links">
+      <li><a href="#hero" class="nav-link">Inicio</a></li>
+      <li><a href="#categorias" class="nav-link">Categorías</a></li>
+      <li><a href="#tienda" class="nav-link">Tienda</a></li>
+      <li><a href="#resenas" class="nav-link">Reseñas</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://www.tiktok.com/@bermedanae7" target="_blank" class="tiktok-btn" onclick="event.stopPropagation();">
+        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.67a8.27 8.27 0 0 0 4.84 1.54V6.75a4.83 4.83 0 0 1-1.07-.06z"/></svg>
+        @bermedanae7
+      </a>
+      <button class="shop-btn" data-scroll="tienda">🛒 Tienda</button>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-left">
+    <div class="live-badge">
+      <span class="live-dot"></span>
+      Vendiendo en TikTok Shop
+    </div>
+    <h1>
+      Los productos<br>
+      <span class="pk">más virales</span>
+      <span class="line2">directo a tu puerta</span>
+    </h1>
+    <p class="hero-desc">
+      Todo lo que ves en TikTok, disponible ahora mismo. Productos tendencia, envío rápido y atención real.
+    </p>
+    <div class="hero-ctas">
+      <a href="https://www.tiktok.com/@bermedanae7" target="_blank" class="cta-main" onclick="event.stopPropagation();">
+        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.67a8.27 8.27 0 0 0 4.84 1.54V6.75a4.83 4.83 0 0 1-1.07-.06z"/></svg>
+        Ir a TikTok Shop
+      </a>
+      <button class="cta-ghost" data-scroll="categorias">
+        Ver categorías ↓
+      </button>
+    </div>
+    <div class="hero-nums">
+      <div><div class="hnum-val">5K+</div><div class="hnum-lbl">Seguidores</div></div>
+      <div><div class="hnum-val">4.9★</div><div class="hnum-lbl">Valoración</div></div>
+      <div><div class="hnum-val">1200+</div><div class="hnum-lbl">Productos</div></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="collage-wrap">
+      <div class="c-card">🧴<span class="c-badge">Skincare</span><span class="c-price">12€</span></div>
+      <div class="c-card">👜<span class="c-badge">Moda</span><span class="c-price">24€</span></div>
+      <div class="c-card">🕯️<span class="c-badge">Hogar</span><span class="c-price">8€</span></div>
+      <div class="c-card">💄<span class="c-badge">Belleza</span><span class="c-price">15€</span></div>
+      <div class="c-card">📱<span class="c-badge">Tech</span><span class="c-price">18€</span></div>
+      <div class="c-card">🌿<span class="c-badge">Wellness</span><span class="c-price">22€</span></div>
+      <div class="c-card">🎧<span class="c-badge">Gadgets</span><span class="c-price">19€</span></div>
+      <div class="c-card">💆<span class="c-badge">Cuidado</span><span class="c-price">7€</span></div>
+      <div class="c-card">✨<span class="c-badge">Viral</span><span class="c-price">11€</span></div>
+    </div>
+    <!-- floating cards -->
+    <div class="tiktok-float">
+      <div class="tt-icon">
+        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.67a8.27 8.27 0 0 0 4.84 1.54V6.75a4.83 4.83 0 0 1-1.07-.06z"/></svg>
+      </div>
+      <div>
+        <div class="tt-label">TikTok Shop oficial</div>
+        <div class="tt-name">BeeRMeee 😇</div>
+        <div class="tt-follow">5K seguidores</div>
+      </div>
+    </div>
+    <div class="verified-float">
+      <strong>✓</strong>
+      <span>Vendedor verificado</span>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Envío en 24-48h</span>
+    <span class="ticker-item">+2.000 clientes felices</span>
+    <span class="ticker-item">Devoluciones gratis</span>
+    <span class="ticker-item">Pago 100% seguro</span>
+    <span class="ticker-item">Productos verificados</span>
+    <span class="ticker-item">TikTok Shop oficial</span>
+    <span class="ticker-item">Nuevos productos cada semana</span>
+    <span class="ticker-item">4.9★ en TikTok</span>
+    <!-- duplicate for loop -->
+    <span class="ticker-item">Envío en 24-48h</span>
+    <span class="ticker-item">+2.000 clientes felices</span>
+    <span class="ticker-item">Devoluciones gratis</span>
+    <span class="ticker-item">Pago 100% seguro</span>
+    <span class="ticker-item">Productos verificados</span>
+    <span class="ticker-item">TikTok Shop oficial</span>
+    <span class="ticker-item">Nuevos productos cada semana</span>
+    <span class="ticker-item">4.9★ en TikTok</span>
+  </div>
+</div>
+
+<!-- CATEGORÍAS -->
+<section class="cats-section" id="categorias">
+  <div class="inner">
+    <span class="stag">Explora</span>
+    <h2 class="stit">¿Qué estás buscando?</h2>
+    <p class="ssub">Cada categoría te lleva directo a su sección en TikTok Shop.</p>
+    <div class="cats-grid">
+      <a href="https://www.tiktok.com/@bermedanae7" target="_blank" class="cat-card">
+        <div class="cat-emoji">💄</div>
+        <div class="cat-name">Belleza & Skincare</div>
+        <div class="cat-count">87 productos</div>
+      </a>
+      <a href="https://www.tiktok.com/@bermedanae7" target="_blank" class="cat-card">
+        <div class="cat-emoji">🏠</div>
+        <div class="cat-name">Hogar & Deco</div>
+        <div class="cat-count">54 productos</div>
+      </a>
+      <a href="https://www.tiktok.com/@bermedanae7" target="_blank" class="cat-card">
+        <div class="cat-emoji">👗</div>
+        <div class="cat-name">Moda & Accesorios</div>
+        <div class="cat-count">63 productos</div>
+      </a>
+      <a href="https://www.tiktok.com/@bermedanae7" target="_blank" class="cat-card">
+        <div class="cat-emoji">📱</div>
+        <div class="cat-name">Tech & Gadgets</div>
+        <div class="cat-count">41 productos</div>
+      </a>
+      <a href="https://www.tiktok.com/@bermedanae7" target="_blank" class="cat-card">
+        <div class="cat-emoji">🍜</div>
+        <div class="cat-name">Alimentación</div>
+        <div class="cat-count">29 productos</div>
+      </a>
+      <a href="https://www.tiktok.com/@bermedanae7" target="_blank" class="cat-card">
+        <div class="cat-emoji">🌿</div>
+        <div class="cat-name">Wellness</div>
+        <div class="cat-count">33 productos</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TIKTOK SHOP -->
+<section class="shop-section" id="tienda">
+  <div class="inner">
+    <span class="stag">Compra directa</span>
+    <h2 class="stit">Todos los productos en<br>TikTok Shop</h2>
+    <p class="ssub">Más de 200 productos actualizados en tiempo real. Sin esperar, sin complicaciones.</p>
+    <div class="carousel-wrapper">
+      <button class="carousel-btn carousel-btn-prev" id="videoPrev">❮</button>
+      <div class="carousel-container">
+        <div class="videos-carousel" id="videosCarousel">
+          <div class="video-card" data-video-id="7614545110138703126">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@bermedanae7/video/7614545110138703126" data-video-id="7614545110138703126"><section></section></blockquote>
+            <div class="video-thumbnail"><img src="https://p16-sign.tiktokcdn.com/aweme/720x720/tos-useast2a-p-0-us.jpeg" alt="video"><div class="play-icon">▶</div></div>
+          </div>
+          <div class="video-card" data-video-id="7583441207414623510">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@bermedanae7/video/7583441207414623510" data-video-id="7583441207414623510"><section></section></blockquote>
+            <div class="video-thumbnail"><img src="https://p16-sign.tiktokcdn.com/aweme/720x720/tos-useast2a-p-0-us.jpeg" alt="video"><div class="play-icon">▶</div></div>
+          </div>
+          <div class="video-card" data-video-id="7610808795274562838">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@bermedanae7/video/7610808795274562838" data-video-id="7610808795274562838"><section></section></blockquote>
+            <div class="video-thumbnail"><img src="https://p16-sign.tiktokcdn.com/aweme/720x720/tos-useast2a-p-0-us.jpeg" alt="video"><div class="play-icon">▶</div></div>
+          </div>
+          <div class="video-card" data-video-id="7623885393754197270">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@bermedanae7/video/7623885393754197270" data-video-id="7623885393754197270"><section></section></blockquote>
+            <div class="video-thumbnail"><img src="https://p16-sign.tiktokcdn.com/aweme/720x720/tos-useast2a-p-0-us.jpeg" alt="video"><div class="play-icon">▶</div></div>
+          </div>
+          <div class="video-card" data-video-id="7643931270514363670">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@bermedanae7/video/7643931270514363670" data-video-id="7643931270514363670"><section></section></blockquote>
+            <div class="video-thumbnail"><img src="https://p16-sign.tiktokcdn.com/aweme/720x720/tos-useast2a-p-0-us.jpeg" alt="video"><div class="play-icon">▶</div></div>
+          </div>
+          <div class="video-card" data-video-id="7625982736922201366">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@bermedanae7/video/7625982736922201366" data-video-id="7625982736922201366"><section></section></blockquote>
+            <div class="video-thumbnail"><img src="https://p16-sign.tiktokcdn.com/aweme/720x720/tos-useast2a-p-0-us.jpeg" alt="video"><div class="play-icon">▶</div></div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn carousel-btn-next" id="videoNext">❯</button>
+    </div>
+    <a href="https://www.tiktok.com/@bermedanae7" target="_blank" class="tt-shop-btn">
+      <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.67a8.27 8.27 0 0 0 4.84 1.54V6.75a4.83 4.83 0 0 1-1.07-.06z"/></svg>
+      Ver todos los productos en TikTok Shop →
+    </a>
+    <p class="shop-note">Se abre la tienda oficial directamente en TikTok</p>
+    <div class="shop-features">
+      <div class="shop-feat">
+        <div class="shop-feat-icon">🔄</div>
+        <div class="shop-feat-title">Siempre actualizado</div>
+        <div class="shop-feat-desc">Productos sincronizados automáticamente con TikTok Shop</div>
+      </div>
+      <div class="shop-feat">
+        <div class="shop-feat-icon">🔒</div>
+        <div class="shop-feat-title">Pago seguro</div>
+        <div class="shop-feat-desc">Compra directamente en TikTok con todos los métodos de pago</div>
+      </div>
+      <div class="shop-feat">
+        <div class="shop-feat-icon">📦</div>
+        <div class="shop-feat-title">Envío rápido</div>
+        <div class="shop-feat-desc">Seguimiento en tiempo real, entrega en 24-48 horas</div>
+      </div>
+      <div class="shop-feat">
+        <div class="shop-feat-icon">⭐</div>
+        <div class="shop-feat-title">Reseñas reales</div>
+        <div class="shop-feat-desc">Valoraciones verificadas de compradores en TikTok Shop</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEÑAS -->
+<section class="reviews-section" id="resenas">
+  <div class="inner">
+    <div class="rev-header">
+      <div>
+        <span class="stag">Reseñas</span>
+        <h2 class="stit">Lo que dicen las clientas</h2>
+        <p class="ssub">Reseñas reales de TikTok Shop, sin filtros.</p>
+      </div>
+      <div class="rev-score">
+        <div class="rev-score-big">4.9</div>
+        <div class="rev-score-stars">★★★★★</div>
+        <div class="rev-score-count">+2.000 reseñas</div>
+      </div>
+    </div>
+  </div>
+  <div class="rev-track-wrap">
+    <div class="rev-track">
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"El sérum es una pasada, llegó en 24h y mi piel ha cambiado en una semana 😍"</p><div class="rev-author"><div class="rev-av">ML</div><div><div class="rev-name">María L.</div><div class="rev-via">via TikTok Shop</div></div></div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"El bolso es exactamente igual que en el vídeo. Ya he pedido uno para mi hermana"</p><div class="rev-author"><div class="rev-av">SR</div><div><div class="rev-name">Sara R.</div><div class="rev-via">via TikTok Shop</div></div></div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Los auriculares son una ganga, calidad increíble para el precio. 100% recomendados"</p><div class="rev-author"><div class="rev-av">JP</div><div><div class="rev-name">Jorge P.</div><div class="rev-via">via TikTok Shop</div></div></div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"La vela huele de maravilla. Ya tengo 4 en casa jaja. El packaging también es muy bonito"</p><div class="rev-author"><div class="rev-av">AM</div><div><div class="rev-name">Ana M.</div><div class="rev-via">via TikTok Shop</div></div></div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★☆</div><p class="rev-text">"Tuve un problemilla y lo solucionaron al instante. Atención al cliente 10/10, repetiré"</p><div class="rev-author"><div class="rev-av">PG</div><div><div class="rev-name">Paula G.</div><div class="rev-via">via TikTok Shop</div></div></div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"BeeRMeee siempre sube lo más trendy. El difusor es precioso y va perfecto 🫶"</p><div class="rev-author"><div class="rev-av">LF</div><div><div class="rev-name">Laura F.</div><div class="rev-via">via TikTok Shop</div></div></div></div>
+      <!-- duplicate for loop -->
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"El sérum es una pasada, llegó en 24h y mi piel ha cambiado en una semana 😍"</p><div class="rev-author"><div class="rev-av">ML</div><div><div class="rev-name">María L.</div><div class="rev-via">via TikTok Shop</div></div></div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"El bolso es exactamente igual que en el vídeo. Ya he pedido uno para mi hermana"</p><div class="rev-author"><div class="rev-av">SR</div><div><div class="rev-name">Sara R.</div><div class="rev-via">via TikTok Shop</div></div></div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Los auriculares son una ganga, calidad increíble para el precio. 100% recomendados"</p><div class="rev-author"><div class="rev-av">JP</div><div><div class="rev-name">Jorge P.</div><div class="rev-via">via TikTok Shop</div></div></div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"La vela huele de maravilla. Ya tengo 4 en casa jaja. El packaging también es muy bonito"</p><div class="rev-author"><div class="rev-av">AM</div><div><div class="rev-name">Ana M.</div><div class="rev-via">via TikTok Shop</div></div></div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★☆</div><p class="rev-text">"Tuve un problemilla y lo solucionaron al instante. Atención al cliente 10/10, repetiré"</p><div class="rev-author"><div class="rev-av">PG</div><div><div class="rev-name">Paula G.</div><div class="rev-via">via TikTok Shop</div></div></div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"BeeRMeee siempre sube lo más trendy. El difusor es precioso y va perfecto 🫶"</p><div class="rev-author"><div class="rev-av">LF</div><div><div class="rev-name">Laura F.</div><div class="rev-via">via TikTok Shop</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="how-section">
+  <div class="inner" style="text-align:center">
+    <span class="stag">Simple</span>
+    <h2 class="stit">¿Cómo comprar?</h2>
+  </div>
+  <div class="inner">
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">PASO 01</div>
+        <div class="step-ico">🔍</div>
+        <div class="step-title">Elige categoría</div>
+        <p class="step-desc">Navega por las secciones y encuentra lo que te gusta.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">PASO 02</div>
+        <div class="step-ico">📲</div>
+        <div class="step-title">Ve a TikTok Shop</div>
+        <p class="step-desc">Un toque y entras directo a la tienda oficial.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">PASO 03</div>
+        <div class="step-ico">💳</div>
+        <div class="step-title">Paga seguro</div>
+        <p class="step-desc">Tarjeta, Bizum o PayPal. 100% protegido.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">PASO 04</div>
+        <div class="step-ico">📦</div>
+        <div class="step-title">Recíbelo en casa</div>
+        <p class="step-desc">24-48h con seguimiento en tiempo real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>¿Lista para el próximo viral? ✨</h2>
+  <p>Más de 1200 productos tendencia esperándote en TikTok Shop. Nuevos cada semana.</p>
+  <a href="https://www.tiktok.com/@bermedanae7" target="_blank" class="cta-wh">
+    Ir a TikTok Shop →
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <!-- Columna 1: Branding -->
+    <div class="footer-col">
+      <div class="footer-logo">Bee<span>R</span>Meee ✨</div>
+      <p class="footer-desc">Los productos más virales de TikTok, directamente a tu puerta. Compra con confianza en nuestro TikTok Shop oficial.</p>
+      <div class="footer-socials">
+        <a href="https://www.tiktok.com/@bermedanae7" target="_blank" class="social-btn" title="TikTok">🎵</a>
+        <a href="javascript:void(0)" class="social-btn" title="Instagram">📸</a>
+        <a href="javascript:void(0)" class="social-btn" title="WhatsApp">💬</a>
+        <a href="javascript:void(0)" class="social-btn" title="Email">✉️</a>
+      </div>
+    </div>
+
+    <!-- Columna 2: Compra -->
+    <div class="footer-col">
+      <h3>🛍️ Compra</h3>
+      <ul>
+        <li><a href="#categorias">Todas las categorías</a></li>
+        <li><a href="#tienda">TikTok Shop</a></li>
+        <li><a href="#resenas">Reseñas de clientes</a></li>
+        <li><a href="javascript:void(0)">Ofertas especiales</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 3: Atención al cliente -->
+    <div class="footer-col">
+      <h3>👋 Atención al cliente</h3>
+      <ul>
+        <li><a href="javascript:void(0)">Contacta con nosotros</a></li>
+        <li><a href="javascript:void(0)">¿Cómo comprar?</a></li>
+        <li><a href="javascript:void(0)">Devoluciones</a></li>
+        <li><a href="javascript:void(0)">Seguimiento de pedidos</a></li>
+        <li><a href="javascript:void(0)">Preguntas frecuentes</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 4: Información -->
+    <div class="footer-col">
+      <h3>ℹ️ Información</h3>
+      <ul>
+        <li><a href="javascript:void(0)">Sobre nosotros</a></li>
+        <li><a href="javascript:void(0)">Política de privacidad</a></li>
+        <li><a href="javascript:void(0)">Términos y condiciones</a></li>
+        <li><a href="javascript:void(0)">Política de cookies</a></li>
+        <li><a href="javascript:void(0)">Envíos y entregas</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Línea inferior -->
+  <div class="footer-bottom">
+    <div>© 2026 BeeRMeee. Todos los derechos reservados.</div>
+    <div class="footer-links">
+      <a href="javascript:void(0)">Privacidad</a>
+      <a href="javascript:void(0)">Cookies</a>
+      <a href="javascript:void(0)">Contacto</a>
+      <a href="https://asteroweb.com" target="_blank">Web por asteroweb.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Hamburger menu - simple and clean
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  const navLinks_items = document.querySelectorAll('.nav-link');
+
+  // Toggle menu
+  hamburger.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navLinks.classList.toggle('active');
+  });
+
+  // Close menu when clicking a link
+  navLinks_items.forEach(link => {
+    link.addEventListener('click', (e) => {
+      navLinks.classList.remove('active');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('nav') && navLinks.classList.contains('active')) {
+      navLinks.classList.remove('active');
+    }
+  });
+
+  // Scroll buttons
+  document.querySelectorAll('[data-scroll]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.scroll);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Subtle entrance animation for hero text
+  document.addEventListener('DOMContentLoaded', () => {
+    const els = document.querySelectorAll('.live-badge, .hero h1, .hero-desc, .hero-ctas, .hero-nums');
+    els.forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(18px)';
+      el.style.transition = `opacity .6s ease ${i * 0.1}s, transform .6s ease ${i * 0.1}s`;
+      setTimeout(() => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      }, 80 + i * 100);
+    });
+    
+  // Load TikTok embeds
+    let tiktokScriptLoaded = false;
+    function loadTikTokEmbed() {
+      if (window.tiktok && window.tiktok.Embed) {
+        window.tiktok.Embed.lib.render(document.getElementById('videosCarousel'));
+      } else if (!tiktokScriptLoaded) {
+        tiktokScriptLoaded = true;
+        const script = document.createElement('script');
+        script.src = 'https://www.tiktok.com/embed.js';
+        script.async = true;
+        script.onload = () => {
+          if (window.tiktok && window.tiktok.Embed) {
+            window.tiktok.Embed.lib.render(document.getElementById('videosCarousel'));
+            // Esperar a que los iframes se carguen
+            setTimeout(setupVideoControls, 1000);
+          }
+        };
+        document.body.appendChild(script);
+      }
+    }
+    loadTikTokEmbed();
+    
+    function setupVideoControls() {
+      const videoCards = document.querySelectorAll('.video-card');
+      let currentPlayingVideo = null;
+      
+      videoCards.forEach((card, index) => {
+        const iframe = card.querySelector('iframe');
+        if (iframe) {
+          // Detectar cuando intenta reproducerse
+          iframe.addEventListener('play', (e) => {
+            if (currentPlayingVideo !== null && currentPlayingVideo !== index) {
+              // Hay otro video reproduciéndose, intentar pausarlo
+              const otherCard = document.querySelectorAll('.video-card')[currentPlayingVideo];
+              const otherIframe = otherCard.querySelector('iframe');
+              if (otherIframe && otherIframe.contentWindow) {
+                try {
+                  otherIframe.contentWindow.postMessage({ type: 'PAUSE' }, '*');
+                } catch (err) {}
+              }
+            }
+            currentPlayingVideo = index;
+          }, true);
+          
+          iframe.addEventListener('pause', () => {
+            if (currentPlayingVideo === index) {
+              currentPlayingVideo = null;
+            }
+          }, true);
+          
+          iframe.addEventListener('ended', () => {
+            if (currentPlayingVideo === index) {
+              currentPlayingVideo = null;
+            }
+          }, true);
+        }
+      });
+      
+      // Monitorear clics en los videos para pausar otros
+      document.addEventListener('click', (e) => {
+        const clickedCard = e.target.closest('.video-card');
+        if (clickedCard) {
+          const clickedIndex = Array.from(videoCards).indexOf(clickedCard);
+          if (currentPlayingVideo !== null && currentPlayingVideo !== clickedIndex) {
+            const otherCard = videoCards[currentPlayingVideo];
+            if (otherCard) {
+              // Marcar el otro video como pausado
+              otherCard.style.opacity = '0.7';
+              setTimeout(() => {
+                otherCard.style.opacity = '1';
+              }, 300);
+            }
+          }
+          currentPlayingVideo = clickedIndex;
+        }
+      });
+    }
+    
+    // Llamar cuando los embeds estén listos
+    if (document.querySelector('.video-card iframe')) {
+      setupVideoControls();
+    }
+    
+    // Videos Carousel Controls
+    const videosCarousel = document.getElementById('videosCarousel');
+    const videoPrevBtn = document.getElementById('videoPrev');
+    const videoNextBtn = document.getElementById('videoNext');
+    
+    if (videosCarousel && videoPrevBtn && videoNextBtn) {
+      // Update button states on scroll
+      function updateCarouselButtons() {
+        videoPrevBtn.disabled = videosCarousel.scrollLeft === 0;
+        const maxScroll = videosCarousel.scrollWidth - videosCarousel.clientWidth;
+        videoNextBtn.disabled = videosCarousel.scrollLeft >= maxScroll - 5;
+      }
+      
+      // Scroll carousel
+      function scrollVideos(direction) {
+        const scrollAmount = 300;
+        videosCarousel.scrollBy({
+          left: direction * scrollAmount,
+          behavior: 'smooth'
+        });
+        setTimeout(updateCarouselButtons, 300);
+      }
+      
+      videoPrevBtn.addEventListener('click', () => scrollVideos(-1));
+      videoNextBtn.addEventListener('click', () => scrollVideos(1));
+      videosCarousel.addEventListener('scroll', updateCarouselButtons);
+      
+      // Initial state
+      setTimeout(updateCarouselButtons, 500);
+    }
+
+  });
+
+  document.addEventListener('mousemove', e=>{
+
+ document.documentElement.style.setProperty(
+ '--x',
+ e.clientX+'px'
+ );
+
+ document.documentElement.style.setProperty(
+ '--y',
+ e.clientY+'px'
+ );
+
+});
+</script>
+</body>
+</html>
