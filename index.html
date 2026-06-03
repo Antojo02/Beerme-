@@ -991,8 +991,12 @@
     .logo { font-size: 18px; }
     
     .hero-left { padding: 36px 5% 28px; }
-    .hero-nums { flex-direction: column; gap: 16px; padding-top: 20px; }
-    .hnum-val { font-size: 22px; }
+    .hero-nums {display: flex;flex-direction: row;justify-content: space-between;align-items: center;gap: 12px;padding-top: 20px;}
+    .hero-nums > div {flex: 1;text-align: center;}
+.hnum-val {
+    font-size: 20px;
+  }
+}    .hnum-val { font-size: 22px; }
     .hnum-lbl { font-size: 11px; }
     
     .live-badge { font-size: 11px; padding: 6px 12px; margin-bottom: 16px; }
@@ -1035,10 +1039,28 @@
     .final-cta p { font-size: 14px; margin: 0 auto 20px; }
     .cta-wh { padding: 14px 32px; font-size: 13px; }
     
-    .footer-content {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
+      .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 28px;
+    width: 100%;
+  }
+
+  .footer-col {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-col ul {
+    align-items: center;
+  }
+}
     .footer-col h3 { font-size: 13px; margin-bottom: 12px; }
     .footer-col a { font-size: 12px; }
     .footer-desc { font-size: 12px; }
@@ -1326,7 +1348,7 @@
   <div class="inner">
     <span class="stag">Compra directa</span>
     <h2 class="stit">Todos los productos en<br>TikTok Shop</h2>
-    <p class="ssub">Más de 1200 productos actualizados en tiempo real. Sin esperar, sin complicaciones.</p>
+    <p class="ssub">Más de 200 productos actualizados en tiempo real. Sin esperar, sin complicaciones.</p>
     <div class="carousel-wrapper">
       <button class="carousel-btn carousel-btn-prev" id="videoPrev">❮</button>
       <div class="carousel-container">
